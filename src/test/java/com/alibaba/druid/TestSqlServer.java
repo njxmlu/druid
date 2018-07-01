@@ -54,7 +54,7 @@ public class TestSqlServer extends TestCase {
      *
      * @throws Exception
      */
-    public void test_1() throws Exception {
+    public void test_22() throws Exception {
         Class.forName(driverClass);
 
         Connection conn = DriverManager.getConnection(jdbcUrl, user, password);
