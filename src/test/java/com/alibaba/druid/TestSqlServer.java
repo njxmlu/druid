@@ -15,10 +15,10 @@
  */
 package com.alibaba.druid;
 
+import junit.framework.TestCase;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-
-import junit.framework.TestCase;
 
 
 public class TestSqlServer extends TestCase {
@@ -41,9 +41,22 @@ public class TestSqlServer extends TestCase {
 
         driverClass = "net.sourceforge.jtds.jdbc.Driver";
     }
+
     public void test_0 () throws Exception {
         Class.forName(driverClass);
-        
+
+        Connection conn = DriverManager.getConnection(jdbcUrl, user, password);
+        conn.close();
+    }
+
+    /**
+     * lxmlu
+     *
+     * @throws Exception
+     */
+    public void test_1() throws Exception {
+        Class.forName(driverClass);
+
         Connection conn = DriverManager.getConnection(jdbcUrl, user, password);
         conn.close();
     }
